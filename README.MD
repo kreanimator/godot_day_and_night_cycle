@@ -109,14 +109,20 @@ date_ui.set_starting_year(2150)   # Year 2150
 
 ## Interactive Controls
 
-### Date/Time Display Controls
-Debug time controls for testing the day/night cycle:
+### Debug Controls
+Comprehensive debug controls for testing the day/night cycle and date/time display:
 
+**Time Progression:**
 - **1**: Add 15 minutes to current time
 - **2**: Add 1 hour to current time  
 - **3**: Add 1 day (24 hours) to current time
 
-These controls allow you to quickly test different times of day and see how the lighting and date/time display changes.
+**Display Customization:**
+- **4**: Cycle through date formats (DD/MM/YYYY, MM/DD/YYYY, etc.)
+- **5**: Cycle through time formats (24-hour, 12-hour, etc.)
+- **6**: Cycle through different years (2024, 2435, 3000, etc.)
+
+These controls allow you to quickly test different times of day, date formats, and see how the lighting and date/time display changes.
 
 ### Camera Controls
 - **Mouse**: Look around (always active)
