@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0klkvmdbkbye"]
+
+[ext_resource type="Script" uid="uid://bt0x8bfbae8l3" path="res://scripts/debug_time_controls.gd" id="1_30wvb"]
+
+[node name="DebugTimeControls" type="Node"]
+script = ExtResource("1_30wvb")

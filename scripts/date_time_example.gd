@@ -39,11 +39,11 @@ func _setup_date_time_display() -> void:
 
 func _input(event: InputEvent) -> void:
 	"""Handle input to cycle through different display formats."""
-	if event.is_action_pressed("ui_accept"): 
+	if event.is_action_pressed("debug_1"): 
 		_cycle_date_format()
-	elif event.is_action_pressed("ui_cancel"):
+	elif event.is_action_pressed("debug_2"):
 		_cycle_time_format()
-	elif event.is_action_pressed("ui_select"):
+	elif event.is_action_pressed("debug_3"):
 		_cycle_year()
 
 func _cycle_date_format() -> void:

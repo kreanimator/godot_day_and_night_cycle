@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://camera_controller_unique"]
+
+[ext_resource type="Script" path="res://scripts/camera_controller.gd" id="1_camera"]
+
+[node name="CameraController" type="Node3D"]
+script = ExtResource("1_camera")
+yaw_sensitivity = 0.07
+pitch_sensitivity = 0.07
+yaw_acceleration = 15.0
+pitch_acceleration = 15.0
+pitch_max = 75.0
+pitch_min = -55.0
+
+[node name="cam_yaw" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="cam_pitch" type="Node3D" parent="cam_yaw"]
+unique_name_in_owner = true
+
+[node name="SpringArm3D" type="SpringArm3D" parent="cam_yaw/cam_pitch"]
+unique_name_in_owner = true
+spring_length = 5.0
+margin = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="cam_yaw/cam_pitch/SpringArm3D"]
+unique_name_in_owner = true
+fov = 75.0

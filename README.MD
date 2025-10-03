@@ -109,11 +109,19 @@ date_ui.set_starting_year(2150)   # Year 2150
 
 ## Interactive Controls
 
-The example script (`scripts/date_time_example.gd`) provides interactive controls:
+### Date/Time Display Controls
+Debug time controls for testing the day/night cycle:
 
-- **Space**: Cycle through date formats
-- **Escape**: Cycle through time formats
-- **Enter**: Cycle through different years (2024, 2435, 3000, 2150, 2500)
+- **1**: Add 15 minutes to current time
+- **2**: Add 1 hour to current time  
+- **3**: Add 1 day (24 hours) to current time
+
+These controls allow you to quickly test different times of day and see how the lighting and date/time display changes.
+
+### Camera Controls
+- **Mouse**: Look around (always active)
+- **WASD**: Move robot relative to camera
+- **Space**: Jump
 
 ## Advanced Usage
 

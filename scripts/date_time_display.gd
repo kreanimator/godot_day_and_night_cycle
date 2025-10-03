@@ -64,21 +64,6 @@ func _ready() -> void:
 
 func _setup_ui() -> void:
 	"""Initialize the UI elements if they don't exist."""
-	if not date_label:
-		date_label = Label.new()
-		date_label.name = "DateLabel"
-		add_child(date_label)
-	
-	if not time_label:
-		time_label = Label.new()
-		time_label.name = "TimeLabel"
-		add_child(time_label)
-	
-	if not day_name_label:
-		day_name_label = Label.new()
-		day_name_label.name = "DayNameLabel"
-		add_child(day_name_label)
-	
 	# Set initial visibility
 	day_name_label.visible = show_day_name
 
