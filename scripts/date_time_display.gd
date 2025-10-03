@@ -64,16 +64,13 @@ func _ready() -> void:
 
 func _setup_ui() -> void:
 	"""Initialize the UI elements if they don't exist."""
-	# Set initial visibility
 	day_name_label.visible = show_day_name
 
 func _connect_to_cycle_system() -> void:
 	"""Connect to the day/night cycle system."""
 	if day_night_cycle.is_empty():
-		# Try to find the cycle system automatically
 		cycle_system = get_tree().get_first_node_in_group("day_night_cycle")
 		if not cycle_system:
-			# Look for WorldEnvironment with day&night_cycle script
 			for node in get_tree().get_nodes_in_group("_world_environment"):
 				if node.get_script() and "day" in node.get_script().get_path().to_lower():
 					cycle_system = node
@@ -113,7 +110,6 @@ func _calculate_calendar_date(day_of_year: int) -> void:
 	var year = starting_year
 	var remaining_days = day_of_year
 	
-	# Handle year transitions
 	while remaining_days > DAYS_IN_YEAR:
 		remaining_days -= DAYS_IN_YEAR
 		year += 1
@@ -122,7 +118,6 @@ func _calculate_calendar_date(day_of_year: int) -> void:
 		remaining_days += DAYS_IN_YEAR
 		year -= 1
 	
-	# Calculate month and day
 	var month = 1
 	var day = remaining_days
 	
@@ -210,7 +205,6 @@ func _format_time(day_time: float) -> String:
 
 func _get_day_name() -> String:
 	"""Calculate the day of the week name."""
-	# Simple day calculation (this could be made more accurate)
 	var day_of_week = (current_date.day_of_year - 1) % 7
 	return DAY_NAMES[day_of_week]
 
