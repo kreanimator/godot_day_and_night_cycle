@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b81wf6no5v5l2"]
+[gd_scene load_steps=4 format=3 uid="uid://b81wf6no5v5l2"]
 
 [ext_resource type="Environment" uid="uid://dgg1b5bgpljw6" path="res://resources/materials/default_environment.tres" id="1_klkgf"]
 [ext_resource type="Script" uid="uid://bvdmlwrma5ym2" path="res://scripts/day&night_cycle.gd" id="2_ij8q7"]
+[ext_resource type="PackedScene" uid="uid://bqxv8k7y8h3qj" path="res://scenes/ui/date_time_ui.tscn" id="3_ui8k7"]
 
 [node name="main" type="Node3D"]
 
@@ -12,8 +13,7 @@ day_time = 6.0
 clouds_cutoff = 0.48
 clouds_weight = 0.07
 time_scale = 1.0
-sun_base_energy = null
-moon_base_energy = null
+moon_base_energy = 0.01
 
 [node name="sun" type="DirectionalLight3D" parent="sky"]
 unique_name_in_owner = true
@@ -25,7 +25,7 @@ shadow_enabled = true
 
 [node name="moon" type="DirectionalLight3D" parent="sky"]
 unique_name_in_owner = true
-transform = Transform3D(0.94942546, 0, -0.3139924, 0.30292982, -0.26310256, 0.9159751, -0.082612224, -0.9647678, -0.24979629, 0, 0, 0)
+transform = Transform3D(0.9494254, 0, -0.31399238, 0.3029298, -0.26310256, 0.915975, -0.08261222, -0.9647678, -0.24979626, 0, 0, 0)
 rotation_order = 4
 light_color = Color(1, 1, 0.6, 1)
 light_energy = 0.01
@@ -34,3 +34,8 @@ shadow_opacity = 0.6
 shadow_blur = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="DateTimeUI" parent="UI" instance=ExtResource("3_ui8k7")]
+day_night_cycle = NodePath("../../sky")

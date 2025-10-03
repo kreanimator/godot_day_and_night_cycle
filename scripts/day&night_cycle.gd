@@ -93,6 +93,9 @@ const DEFAULT_TIME_SCALE: float = 0.01
 @onready var moon: DirectionalLight3D = %moon
 
 func _ready() -> void:
+	# Add to group for easy finding by UI systems
+	add_to_group("day_night_cycle")
+	
 	_initialize_sun()
 	_initialize_moon()
 	_update()

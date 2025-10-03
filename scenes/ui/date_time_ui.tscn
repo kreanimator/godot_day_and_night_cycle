@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqxv8k7y8h3qj"]
+
+[ext_resource type="Script" uid="uid://c58xk4opklh1p" path="res://scripts/date_time_display.gd" id="1_0x8k7"]
+
+[node name="DateTimeUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0x8k7")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -120.0
+offset_right = 300.0
+offset_bottom = -20.0
+grow_vertical = 0
+color = Color(0, 0, 0, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DayNameLabel" type="Label" parent="Background/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Monday"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DateLabel" type="Label" parent="Background/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "25 Dec 2024"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="Background/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "2:30 PM"
+horizontal_alignment = 1
+vertical_alignment = 1
