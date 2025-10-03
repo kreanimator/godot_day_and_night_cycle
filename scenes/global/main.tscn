@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://b81wf6no5v5l2"]
+
+[ext_resource type="Environment" uid="uid://dgg1b5bgpljw6" path="res://resources/materials/default_environment.tres" id="1_klkgf"]
+[ext_resource type="Script" uid="uid://bvdmlwrma5ym2" path="res://scripts/day&night_cycle.gd" id="2_ij8q7"]
+
+[node name="main" type="Node3D"]
+
+[node name="sky" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_klkgf")
+script = ExtResource("2_ij8q7")
+day_time = 4.0
+clouds_cutoff = 0.48
+clouds_weight = 0.07
+moon_base_enegry = 0.01
+
+[node name="sun" type="DirectionalLight3D" parent="sky"]
+unique_name_in_owner = true
+transform = Transform3D(0.9207169, 0, -0.390231, -0.1951155, 0.8660254, -0.46035844, 0.33794996, 0.5, 0.7973642, 0, 0, 0)
+rotation_order = 4
+light_color = Color(1, 1, 0.63529414, 1)
+light_energy = 0.0
+shadow_enabled = true
+
+[node name="moon" type="DirectionalLight3D" parent="sky"]
+unique_name_in_owner = true
+transform = Transform3D(0.96520096, 0, -0.26150924, 0.1873601, -0.6976314, 0.6915247, -0.18243709, -0.7164567, -0.6733545, 0, 0, 0)
+rotation_order = 4
+light_color = Color(1, 1, 0.6, 1)
+light_energy = 0.01
+shadow_enabled = true
+shadow_opacity = 0.6
+shadow_blur = 5.0
