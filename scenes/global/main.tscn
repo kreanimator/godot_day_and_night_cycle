@@ -8,14 +8,16 @@
 [node name="sky" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_klkgf")
 script = ExtResource("2_ij8q7")
-day_time = 4.0
+day_time = 6.0
 clouds_cutoff = 0.48
 clouds_weight = 0.07
-moon_base_enegry = 0.01
+time_scale = 1.0
+sun_base_energy = null
+moon_base_energy = null
 
 [node name="sun" type="DirectionalLight3D" parent="sky"]
 unique_name_in_owner = true
-transform = Transform3D(0.9207169, 0, -0.390231, -0.1951155, 0.8660254, -0.46035844, 0.33794996, 0.5, 0.7973642, 0, 0, 0)
+transform = Transform3D(0.9207628, 0, -0.39012283, 0, 1, 0, 0.39012283, 0, 0.9207628, 0, 0, 0)
 rotation_order = 4
 light_color = Color(1, 1, 0.63529414, 1)
 light_energy = 0.0
@@ -23,10 +25,12 @@ shadow_enabled = true
 
 [node name="moon" type="DirectionalLight3D" parent="sky"]
 unique_name_in_owner = true
-transform = Transform3D(0.96520096, 0, -0.26150924, 0.1873601, -0.6976314, 0.6915247, -0.18243709, -0.7164567, -0.6733545, 0, 0, 0)
+transform = Transform3D(0.94942546, 0, -0.3139924, 0.30292982, -0.26310256, 0.9159751, -0.082612224, -0.9647678, -0.24979629, 0, 0, 0)
 rotation_order = 4
 light_color = Color(1, 1, 0.6, 1)
 light_energy = 0.01
 shadow_enabled = true
 shadow_opacity = 0.6
 shadow_blur = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
